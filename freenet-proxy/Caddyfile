@@ -1,0 +1,31 @@
+# This file is rendered at runtime based on config.yaml options
+:{{ .listen_port }} {
+    # Only allow traffic from loopback and trusted proxies
+    # Cloudflare tunnel runs on Docker bridge: 172.30.33.0/24
+    # Pangolin/Newt on host network: 127.0.0.1
+    # If host_network: true, these are the only allowed sources
+    respond :{{ .listen_port }}/health 200
+
+    # Reverse proxy to freenet-core over loopback
+    reverse_proxy :{{ .node_port }} {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
+        header_up X-Forwarded-Proto {scheme}
+        
+        # WebSocket support - critical for Freenet API
+        transport websocket {
+            upgrade $http_upgrade
+            connection $connection
+        }
+        
+        # Long-lived connections
+        flush_interval -1
+        buf_size -1
+    }
+}
+
+# Health check endpoint (internal)
+:{{ .listen_port }}/health {
+    respond "OK"
+}

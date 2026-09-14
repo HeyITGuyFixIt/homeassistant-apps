@@ -1,0 +1,24 @@
+name: Freenet Core
+version: 0.0.1
+slug: freenet-core
+description: Freenet Core node, peer-to-peer network
+url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+arch:
+  - amd64
+  - aarch64
+startup: services
+boot: auto
+host_network: true
+map:
+  - addon_config
+options:
+  ws_port: 3415
+  http_port: 9798
+  storage_mb: 2048
+  opennet: true
+schema:
+  ws_port: port
+  http_port: port
+  storage_mb: int(256,65536)
+  opennet: bool
+ingress: false

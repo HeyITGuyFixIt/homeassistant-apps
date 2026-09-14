@@ -1,0 +1,41 @@
+name: Freenet Proxy
+version: 0.0.1
+slug: freenet-proxy
+description: Caddy reverse proxy for Freenet node apps
+url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: auto
+host_network: true
+services:
+  - "freenet-core:need"
+options:
+  listen_port: 8443
+  node_host: "127.0.0.1"
+  node_port: 7509
+  auth_mode: "none"
+  cf_access_enabled: false
+  cf_team_domain: null
+  pangolin_enabled: false
+  pangolin_verify: false
+  oidc_enabled: false
+  oidc_provider: null
+  oidc_client_id: null
+  oidc_client_secret: null
+  oidc_redirect_url: null
+schema:
+  listen_port: port
+  node_address: str
+  node_port: port
+  auth_mode: list(none|cloudflare_access|pangolin|oidc)
+  cf_access_enabled: bool
+  cf_team_domain: match(^[a-z0-9.-]*$)?
+  pangolin_enabled: bool
+  pangolin_verify: bool
+  oidc_enabled: bool
+  oidc_provider: url?
+  oidc_client_id: str?
+  oidc_client_secret: str?
+  oidc_redirect_url: str?

@@ -1,0 +1,22 @@
+name: Freenet Git
+version: 0.0.1
+slug: freenet-git
+image: ghcr.io/HeyITGuyFixIt/homeassistant-app-freenet-git-{arch}
+description: Decentralized git hosting on the Freenet network
+url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+arch:
+  - amd64
+  - aarch64
+ingress: true
+ingress_port: 8099
+ingress_stream: true
+panel_icon: "mdi:git"
+panel_title: "Git"
+services:
+  - "freenet-core:need"
+schema:
+  peer_host: str
+  peer_port: port
+options:
+  peer_host: "core-freenet-core"
+  peer_port: 9798

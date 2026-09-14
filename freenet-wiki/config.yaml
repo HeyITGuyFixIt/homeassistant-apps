@@ -1,0 +1,22 @@
+name: Freenet Wiki
+version: 0.0.1
+slug: freenet-wiki
+image: ghcr.io/HeyITGuyFixIt/homeassistant-app-freenet-wiki-{arch}
+description: Decentralized wiki application built on Freenet
+url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+arch:
+  - amd64
+  - aarch64
+ingress: true
+ingress_port: 8099
+ingress_stream: true
+panel_icon: "mdi:alpha-w"
+panel_title: "Wiki"
+services:
+  - "freenet-node:need"
+schema:
+  peer_host: str
+  peer_port: port
+options:
+  peer_host: "core-freenet-core"
+  peer_port: 9798

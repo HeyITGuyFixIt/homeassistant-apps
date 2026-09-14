@@ -1,0 +1,22 @@
+name: Freenet River
+version: 0.0.1
+slug: freenet-river
+image: ghcr.io/HeyITGuyFixIt/homeassistant-app-freenet-river-{arch}
+description: Decentralized group chat application built on Freenet
+url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+arch:
+  - amd64
+  - aarch64
+ingress: true
+ingress_port: 8099
+ingress_stream: true
+panel_icon: "mdi:chat-processing"
+panel_title: "River"
+services:
+  - "freenet-core:need"
+schema:
+  peer_host: str
+  peer_port: port
+options:
+  peer_host: "core-freenet-core"
+  peer_port: 9798
