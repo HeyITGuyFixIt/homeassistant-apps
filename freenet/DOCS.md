@@ -62,3 +62,4 @@ version are refused by the network.
 
 You can disable auto-update by setting `FREENET_DISABLE_AUTO_UPDATE=1` in
 the environment, but **do not do this on the real network**.
+
