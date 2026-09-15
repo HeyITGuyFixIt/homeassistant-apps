@@ -14,15 +14,15 @@ fail() { echo "freenet-render: $*" >&2; exit 1; }
 STORAGE=$(jq -r '.storage_mb' "${OPTS}")
 OPENNET=$(jq -r '.opennet' "${OPTS}")
 AUTH_MODE=$(jq -r '.auth_mode' "${OPTS}")
-CF_TEAM=$(jq -r '.cf_team_domain // empty' "${OPTS}")
+# CF_TEAM=$(jq -r '.cf_team_domain // empty' "${OPTS}")
 OIDC_ISSUER=$(jq -r '.oidc_issuer // empty' "${OPTS}")
 OIDC_CLIENT=$(jq -r '.oidc_client_id // empty' "${OPTS}")
 OIDC_SECRET=$(jq -r '.oidc_client_secret // empty' "${OPTS}")
 DISABLE_UPDATE=$(jq -r '.disable_auto_update' "${OPTS}")
 LOG_LEVEL=$(jq -r '.log_level' "${OPTS}")
 
-[ "${AUTH_MODE}" != "cloudflare_access" ] || [ -n "${CF_TEAM}" ] \
-  || fail "auth_mode=cloudflare_access requires cf_team_domain"
+# [ "${AUTH_MODE}" != "cloudflare_access" ] || [ -n "${CF_TEAM}" ] \
+#   || fail "auth_mode=cloudflare_access requires cf_team_domain"
 
 if [ "${AUTH_MODE}" = "oidc" ]; then
   [ -n "${OIDC_ISSUER}" ] && [ -n "${OIDC_CLIENT}" ] && [ -n "${OIDC_SECRET}" ] \

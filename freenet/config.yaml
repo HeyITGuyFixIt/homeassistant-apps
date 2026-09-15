@@ -1,5 +1,5 @@
 name: Freenet
-version: 0.0.1
+version: 0.0.2
 slug: freenet
 description: Freenet Core node, peer-to-peer network, with Caddy reverse-proxy
 url: https://github.com/HeyITGuyFixIt/homeassistant-apps
@@ -21,22 +21,15 @@ options:
   opennet: true
   # --- Access control ---
   auth_mode: "none"
-  cf_team_domain: null
-  cf_aud_tag: null
-  oidc_issuer: null
-  oidc_client_id: null
-  oidc_client_secret: null
-  oidc_redirect_url: null
 schema:
   storage_mb: int(512,262144)
   opennet: bool
   auth_mode: list(none|cloudflare_access|pangolin|oidc)
-  cf_team_domain: match(^[a-zA-Z0-9._-]+$)?
-  cf_aud_tag: str?
+  # cf_team_domain: match(^[a-zA-Z0-9._-]+$)?
+  # cf_aud_tag: str?
   oidc_issuer: url?
   oidc_client_id: str?
   oidc_client_secret: password?
-  oidc_redirect_url: str?
 ports:
   8443/tcp: 8443
   31337/udp: 31337
