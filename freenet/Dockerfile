@@ -20,7 +20,7 @@ ARG BUILD_ARCH
 ARG S6_OVERLAY_VERSION=3.2.0.0
 
 LABEL \
-  io.hass.version="0.0.5" \
+  io.hass.version="0.0.6" \
   io.hass.type="app" \
   io.hass.arch="aarch64|amd64"
 
@@ -46,8 +46,8 @@ COPY rootfs /
 RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run \
     && mkdir -p /data/freenet /etc/caddy \
     && chown -R freenet:freenet /data \
-    && chmod +x /etc/s6-overlay/s6-rc.d/00-render-config/run
-    && chmod +x /etc/s6-overlay/s6-rc.d/freenet-core/run
+    && chmod +x /etc/s6-overlay/s6-rc.d/00-render-config/run \
+    && chmod +x /etc/s6-overlay/s6-rc.d/freenet-core/run \
     && chmod +x /etc/s6-overlay/s6-rc.d/caddy/run
 
 # s6-overlay must be PID 1
