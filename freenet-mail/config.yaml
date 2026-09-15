@@ -13,10 +13,10 @@ ingress_stream: true
 panel_icon: "mdi:email"
 panel_title: "Mail"
 services:
-  - "freenet-core:need"
+  - "freenet:need"
 schema:
   peer_host: str
   peer_port: port
 options:
-  peer_host: "core-freenet-core"
+  peer_host: "core-freenet"
   peer_port: 9798

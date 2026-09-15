@@ -1,0 +1,45 @@
+name: Freenet
+version: 0.0.1
+slug: freenet
+description: Freenet Core node, peer-to-peer network, with Caddy reverse-proxy
+url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+init: false
+startup: services
+boot: auto
+arch:
+  - amd64
+  - aarch64
+host_network: false
+map:
+  - addon_config
+ingress: false
+panel_icon: "mdi:web-sync"
+panel_title: "Freenet"
+options:
+  # --- Node ---
+  storage_mb: 4096
+  opennet: true
+  # --- Access control ---
+  auth_mode: "none"
+  cf_team_domain: null
+  cf_aud_tag: null
+  oidc_issuer: null
+  oidc_client_id: null
+  oidc_client_secret: null
+  oidc_redirect_url: null
+schema:
+  storage_mb: int(512,262144)
+  opennet: bool
+  auth_mode: list(none|cloudflare_access|pangolin|oidc)
+  cf_team_domain: match(^[a-zA-Z0-9._-]+$)?
+  cf_aud_tag: str?
+  oidc_issuer: url?
+  oidc_client_id: str?
+  oidc_client_secret: password?
+  oidc_redirect_url: str?
+ports:
+  8443/tcp: 8443
+  31337/udp: 31337
+ports_description:
+  8443/tcp: "Caddy gateway. Point your Cloudflare Tunnel or Pangolin Resource here."
+  31337/udp: "Freenet transport. Peers connect here."

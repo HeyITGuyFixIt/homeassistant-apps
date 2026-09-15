@@ -1,5 +1,0 @@
-# Freenet Proxy
-
-
-## Cloudflare Access
-

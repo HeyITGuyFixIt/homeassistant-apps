@@ -1,0 +1,11 @@
+#!/usr/bin/with-contenv bash
+set -euo pipefail
+
+# The upstream script is the supervisor. It knows how to:
+# - Seed the binary
+# - Handle auto-updates
+# - Forward signals
+# - Manage the restart loop
+#
+# We just need to ensure the environment variables are set correctly.
+exec /usr/local/bin/freenet-node-startup

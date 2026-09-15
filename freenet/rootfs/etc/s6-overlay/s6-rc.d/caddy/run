@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+set -euo pipefail
+
+# Validate config first
+caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
+
+exec caddy run \
+  --config /etc/caddy/Caddyfile \
+  --adapter caddyfile
