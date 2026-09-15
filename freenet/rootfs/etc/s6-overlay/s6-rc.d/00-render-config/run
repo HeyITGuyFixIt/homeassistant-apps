@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/bin/bash
 set -euo pipefail
 
 # These are CONSTANTS and must match the keys in config.yaml ports:.

@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bash
+#!/bin/bash
 set -euo pipefail
 
 # The upstream script is the supervisor. It knows how to:
