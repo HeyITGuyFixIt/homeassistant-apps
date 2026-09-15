@@ -123,4 +123,6 @@ EOF
 EOF
 } > /etc/caddy/Caddyfile
 
+chmod 644 /etc/caddy/Caddyfile
+
 echo "freenet-render: node API :::${NODE_API_PORT}, gateway :${GATEWAY_PORT}, auth=${AUTH_MODE}"
