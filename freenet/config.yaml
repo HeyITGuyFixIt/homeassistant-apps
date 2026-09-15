@@ -2,7 +2,7 @@ name: Freenet
 version: 0.0.1
 slug: freenet
 description: Freenet Core node, peer-to-peer network, with Caddy reverse-proxy
-url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+url: https://github.com/HeyITGuyFixIt/homeassistant-addons
 init: false
 startup: services
 boot: auto

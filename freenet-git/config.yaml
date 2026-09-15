@@ -2,7 +2,7 @@ name: Freenet Git
 version: 0.0.1
 slug: freenet-git
 description: Decentralized git hosting on the Freenet network
-url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+url: https://github.com/HeyITGuyFixIt/homeassistant-addons
 arch:
   - amd64
   - aarch64

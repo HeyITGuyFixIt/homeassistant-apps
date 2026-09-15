@@ -2,7 +2,7 @@ name: Freenet Harvest
 version: 0.0.1
 slug: freenet-harvest
 description: Decentralized marketplace for Freenet
-url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+url: https://github.com/HeyITGuyFixIt/homeassistant-addons
 arch:
   - amd64
   - aarch64

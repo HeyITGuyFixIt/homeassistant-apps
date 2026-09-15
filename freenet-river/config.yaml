@@ -2,7 +2,7 @@ name: Freenet River
 version: 0.0.1
 slug: freenet-river
 description: Decentralized group chat application built on Freenet
-url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
+url: https://github.com/HeyITGuyFixIt/homeassistant-addons
 arch:
   - amd64
   - aarch64
