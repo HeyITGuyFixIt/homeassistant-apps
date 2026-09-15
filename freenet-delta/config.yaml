@@ -2,7 +2,7 @@ name: Freenet Delta
 version: 0.0.1
 slug: freenet-delta
 description: Decentralized website builder on Freenet
-url: https://github.com/HeyITGuyFixIt/homeassistant-addons
+url: https://github.com/HeyITGuyFixIt/homeassistant-apps
 arch:
   - amd64
   - aarch64
