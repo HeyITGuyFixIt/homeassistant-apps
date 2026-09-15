@@ -1,7 +1,6 @@
 name: Freenet Git
 version: 0.0.1
 slug: freenet-git
-image: ghcr.io/HeyITGuyFixIt/homeassistant-app-freenet-git-{arch}
 description: Decentralized git hosting on the Freenet network
 url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
 arch:

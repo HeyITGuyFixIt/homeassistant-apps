@@ -1,7 +1,6 @@
 name: Freenet Mail
 version: 0.0.1
 slug: freenet-mail
-image: ghcr.io/HeyITGuyFixIt/homeassistant-app-freenet-mail-{arch}
 description: Decentralized email application built on Freenet
 url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
 arch:

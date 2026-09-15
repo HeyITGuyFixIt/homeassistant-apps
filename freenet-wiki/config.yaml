@@ -1,7 +1,6 @@
 name: Freenet Wiki
 version: 0.0.1
 slug: freenet-wiki
-image: ghcr.io/HeyITGuyFixIt/homeassistant-app-freenet-wiki-{arch}
 description: Decentralized wiki application built on Freenet
 url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
 arch:

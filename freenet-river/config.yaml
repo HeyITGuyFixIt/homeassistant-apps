@@ -1,7 +1,6 @@
 name: Freenet River
 version: 0.0.1
 slug: freenet-river
-image: ghcr.io/HeyITGuyFixIt/homeassistant-app-freenet-river-{arch}
 description: Decentralized group chat application built on Freenet
 url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
 arch:

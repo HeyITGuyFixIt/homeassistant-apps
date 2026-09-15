@@ -1,7 +1,6 @@
 name: Freenet Raven
 version: 0.0.1
 slug: freenet-raven
-image: ghcr.io/HeyITGuyFixIt/homeassistant-app-freenet-raven-{arch}
 description: Decentralized Twitter/X-like application built on Freenet
 url: https://github.com/HeyITGuyFixIt/Freenet-HomeAssistant-Apps
 arch:
