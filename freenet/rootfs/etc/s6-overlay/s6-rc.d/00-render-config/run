@@ -21,14 +21,19 @@ OIDC_SECRET=$(jq -r '.oidc_client_secret // empty' "${OPTS}")
 DISABLE_UPDATE=$(jq -r '.disable_auto_update' "${OPTS}")
 LOG_LEVEL=$(jq -r '.log_level' "${OPTS}")
 
-options=$(bashio::addon.options)
-old_keys=("cf_team_domain", "cf_aud_tag", "oidc_redirect_url", "")
-for old_key in "${old_keys[@]}"; do
-  if bashio::jq.exists "${options}" ".${old_key}"; then
-      bashio::log.info "Removing ${old_key}"
-      bashio::addon.option "${old_key}"
+DEPRECATED_KEYS=("cf_team_domain" "cf_aud_tag" "oidc_redirect_url")
+
+if [ -f "${OPTS}" ]; then
+  for key in "${DEPRECATED_KEYS[@]}"; do
+    if jq -e ".\"${key}\" != null" "${OPTS}" > /dev/null 2>&1; then
+      echo "freenet-render: Removing deprecated key: ${key}" >&2
+    fi
+  done
+  
+  if jq -e ".cf_team_domain != null or .cf_aud_tag != null or .oidc_redirect_url != null" "${OPTS}" > /dev/null 2>&1; then
+    jq 'del(.cf_team_domain, .cf_aud_tag, .oidc_redirect_url)' "${OPTS}" > "${OPTS}.tmp" && mv "${OPTS}.tmp" "${OPTS}"
   fi
-done
+fi
 
 # [ "${AUTH_MODE}" != "cloudflare_access" ] || [ -n "${CF_TEAM}" ] \
 #   || fail "auth_mode=cloudflare_access requires cf_team_domain"
