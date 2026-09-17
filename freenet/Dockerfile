@@ -53,7 +53,8 @@ RUN chmod +x /etc/s6-overlay/s6-rc.d/*/run \
     && sed -i 's/\r$//' /etc/s6-overlay/s6-rc.d/00-render-config/run \
     && sed -i 's/\r$//' /etc/s6-overlay/s6-rc.d/freenet-core/run \
     && sed -i 's/\r$//' /etc/s6-overlay/s6-rc.d/caddy/run
-
+ENV HOME=/data/freenet
+ENV XDG_CONFIG_HOME=/etc/caddy
 # s6-overlay must be PID 1
 ENTRYPOINT ["/init"]
 CMD []
