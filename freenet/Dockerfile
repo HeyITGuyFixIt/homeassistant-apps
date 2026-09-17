@@ -20,7 +20,7 @@ ARG BUILD_ARCH
 ARG S6_OVERLAY_VERSION=3.2.0.0
 
 LABEL \
-  io.hass.version="0.0.13" \
+  io.hass.version="0.0.14" \
   io.hass.type="app" \
   io.hass.arch="aarch64|amd64"
 
